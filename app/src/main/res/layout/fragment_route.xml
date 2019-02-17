@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/abc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_border"
+    android:orientation="vertical"
+    tools:background="#b5ecf5">
+
+
+    <FrameLayout
+        android:id="@+id/lll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="70dp"
+        android:orientation="horizontal">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView2"
+            android:layout_width="277dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:drawableLeft="@drawable/ic_search"
+            android:elevation="1dp"
+            android:hint="Enter the place"
+            android:padding="9dp"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/addPlace"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="285dp"
+            android:text="Add"
+            android:textAlignment="center"
+            tools:background="#f1f3f4"
+            tools:fontFamily="@font/mclaren" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lll"
+        android:layout_margin="10dp">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycle_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/clear_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/show_route"
+        android:layout_marginStart="21dp"
+        android:fontFamily="@font/mclaren"
+        android:text="Delete Route" />
+
+    <Button
+        android:id="@+id/show_route"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="21dp"
+        android:fontFamily="@font/mclaren"
+        android:text="Show Route" />
+
+    <RadioGroup
+        android:id="@+id/rgroup"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="105dp">
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/mclaren"
+            android:text="Driving" />
+
+        <RadioButton
+            android:id="@+id/radioButton8"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/mclaren"
+            android:text="Walking" />
+
+        <RadioButton
+            android:id="@+id/radioButton9"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/mclaren"
+            android:text="Bicycle" />
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/mclaren"
+            android:text="Public Transport" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="76dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rgroup"
+        android:layout_alignStart="@+id/ll2"
+        android:fontFamily="@font/mclaren"
+        android:text="MODE:"
+        android:textColor="#000"
+        android:textSize="14sp" />
+
+</RelativeLayout>

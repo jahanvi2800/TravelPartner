@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".mapActivity"
+        tools:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:hint="Total Distance"
+        android:paddingTop="6dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.985" />
+
+    <TextView
+        android:id="@+id/Dtime"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:hint="Total Duration"
+        android:paddingTop="6dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/distance"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.985" />
+
+
+    <RelativeLayout
+        android:id="@+id/relLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/white_border"
+        android:elevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ic_magnify"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_magnify" />
+
+        <AutoCompleteTextView
+            android:id="@+id/input_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/ic_magnify"
+            android:background="@null"
+            android:hint="    Choose the starting point"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:textColor="#000"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>
+    <!-- This DrawerLayout has two children at the root  -->
+
+
+
+<!-- This LinearLayout represents the contents of the screen  -->
+
+<LinearLayout
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+
+
+    <!-- The ActionBar displayed at the top -->
+
+    <include
+
+        layout="@layout/toolbar"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content" />
+
+
+    <!-- The main content view where fragments are loaded -->
+
+    <FrameLayout
+
+        android:id="@+id/flContent"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</LinearLayout>
+
+
+<FrameLayout
+    android:id="@+id/fragmentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+/>
+
+
+<!-- The navigation drawer that comes from the left -->
+
+<!-- Note that `android:layout_gravity` needs to be set to 'start' -->
+
+<android.support.design.widget.NavigationView
+
+    android:id="@+id/nvView"
+
+    android:layout_width="wrap_content"
+
+    android:layout_height="match_parent"
+
+    android:layout_gravity="start"
+
+    android:background="@android:color/white"
+
+    app:menu="@layout/menu"
+    app:headerLayout="@layout/nav_header"
+    />
+
+</android.support.v4.widget.DrawerLayout>
